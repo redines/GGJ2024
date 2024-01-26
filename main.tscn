@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1ydcgb57vbu7"]
+[gd_scene load_steps=3 format=3 uid="uid://c1ydcgb57vbu7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vp6ei"]
+[ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="2_gjlqo"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vp6ei")
@@ -17,5 +18,8 @@ offset_right = 609.0
 offset_bottom = 302.0
 text = "Start game
 "
+
+[node name="PlayerCat" parent="." instance=ExtResource("2_gjlqo")]
+position = Vector2(509, 405)
 
 [connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]
