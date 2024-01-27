@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crr3b5cv7o0pp"]
+[gd_scene load_steps=9 format=3 uid="uid://crr3b5cv7o0pp"]
 
 [ext_resource type="Texture2D" uid="uid://cxdd4i63avpxs" path="res://icon.svg" id="1_bjrf0"]
 [ext_resource type="Script" path="res://Actors/PlayerCat.gd" id="1_e5wkh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Actors/Idle.gd" id="4_ruxp8"]
 [ext_resource type="Script" path="res://Actors/Run.gd" id="5_il4e8"]
 [ext_resource type="Script" path="res://Actors/Air.gd" id="6_ycc3s"]
+[ext_resource type="Script" path="res://Actors/Attack.gd" id="7_7o0k2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bu76"]
 radius = 17.0
@@ -33,3 +34,6 @@ script = ExtResource("5_il4e8")
 
 [node name="Air" type="Node" parent="StateMachine"]
 script = ExtResource("6_ycc3s")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("7_7o0k2")
