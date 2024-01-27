@@ -14,3 +14,10 @@ var dashing = false
 var NO_SLOPE = 64.0
 var DashAmount = 1
 
+func _ready():
+	SignalBus.Stun_Player.connect(stun_Player)
+	
+
+func stun_Player():
+	print("players gets stunned")
+
