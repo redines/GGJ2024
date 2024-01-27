@@ -6,6 +6,9 @@ const GRAVITY = 200.0
 @onready var fsm := $StateMachine
 @onready var stuntimer = $Timer
 @onready var anim = $Sprite2D/AnimationPlayer
+@onready var sprite = $Sprite2D
+@onready var attacktimer = $AttackTimer
+
 @onready var jumpSound = $JumpSound
 
 ###Player stats
