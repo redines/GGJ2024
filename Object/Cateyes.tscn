@@ -16,10 +16,31 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_yxnkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxnkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxnkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6hfy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6hfy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxnkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxnkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxnkv")
 }],
 "loop": true,
 "name": &"default",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [node name="Cateyes" type="Node2D"]
@@ -29,5 +50,5 @@ script = ExtResource("1_05isd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(12, -3)
 sprite_frames = SubResource("SpriteFrames_2spgf")
-frame_progress = 0.857934
+frame_progress = 0.68082
 metadata/_edit_lock_ = true
