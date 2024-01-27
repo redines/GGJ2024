@@ -50,5 +50,5 @@ script = ExtResource("1_05isd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(12, -3)
 sprite_frames = SubResource("SpriteFrames_2spgf")
-frame_progress = 0.448894
+frame_progress = 0.0543288
 metadata/_edit_lock_ = true
