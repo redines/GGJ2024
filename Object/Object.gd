@@ -1,5 +1,5 @@
 extends RigidBody2D
-var objectScore := 0
+@export var objectScore := 0
 
 func _on_area_2d_area_entered(area):
 	if area.name == "Floor":

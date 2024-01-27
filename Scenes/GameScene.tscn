@@ -17,9 +17,6 @@ size = Vector2(20, 722)
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_sinyy")
-ObjScore1 = 5
-ObjScore2 = 10
-ObjScore3 = 15
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1278.0
@@ -61,7 +58,7 @@ position = Vector2(639, 714)
 shape = SubResource("RectangleShape2D_bkcmk")
 
 [node name="Floor" type="Area2D" parent="Floor"]
-position = Vector2(639, 704)
+position = Vector2(639, 698)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/Floor"]
 shape = SubResource("RectangleShape2D_pjhjt")

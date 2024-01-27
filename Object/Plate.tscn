@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://e1s7wr8ivy7h"]
+[gd_scene load_steps=6 format=3 uid="uid://cye0a0av0ayvf"]
 
 [ext_resource type="Script" path="res://Object/Object.gd" id="1_7tubb"]
-[ext_resource type="Texture2D" uid="uid://cpk0ck1wqqfqx" path="res://Assets/pixil-frame-0 (2).png" id="2_c8767"]
+[ext_resource type="Texture2D" uid="uid://cpk0ck1wqqfqx" path="res://Assets/pixil-frame-0 (2).png" id="2_o68jp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
 radius = 55.1453
@@ -10,18 +10,19 @@ radius = 55.1453
 radius = 49.0102
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(133, 129)
+size = Vector2(153, 140)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
 mass = 0.2
 gravity_scale = 0.1
 script = ExtResource("1_7tubb")
+objectScore = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7.51019e-06, -0.999999)
-scale = Vector2(1.435, 1.315)
-texture = ExtResource("2_c8767")
+position = Vector2(1, 0)
+scale = Vector2(0.71875, 0.742188)
+texture = ExtResource("2_o68jp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_euaim")
@@ -38,8 +39,9 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(-1.5, -2.5)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_5jjmt")
+metadata/_edit_lock_ = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
