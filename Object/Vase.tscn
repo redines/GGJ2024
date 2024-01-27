@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://b8e25ahlcbhdp" path="res://Assets/pixil-frame-0.png" id="2_tjyfj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
-radius = 55.1453
+radius = 28.0713
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 49.0102
+radius = 35.0571
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(153, 140)
+size = Vector2(84, 79)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -39,7 +39,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(0.5, 3)
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_5jjmt")
 metadata/_edit_lock_ = true
 
