@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Object/ObjectScene.gd" id="1_xacr3"]
 [ext_resource type="Script" path="res://Object/StaticBody2D.gd" id="2_6tf0n"]
-[ext_resource type="PackedScene" uid="uid://cnelfnaktc80a" path="res://object.tscn" id="2_m6f4m"]
+[ext_resource type="PackedScene" uid="uid://cnelfnaktc80a" path="res://Object/object.tscn" id="2_wlasp"]
 [ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="4_7gjnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhi2m"]
@@ -14,7 +14,7 @@ size = Vector2(735, 70)
 [node name="ObjectScene" type="Node2D"]
 script = ExtResource("1_xacr3")
 
-[node name="Object" parent="." instance=ExtResource("2_m6f4m")]
+[node name="Object" parent="." instance=ExtResource("2_wlasp")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(579, 618)

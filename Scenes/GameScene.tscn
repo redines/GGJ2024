@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhnwsd4qryba4"]
+[gd_scene load_steps=7 format=3 uid="uid://dhnwsd4qryba4"]
 
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_sinyy"]
 [ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="2_4ifda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcmk"]
 size = Vector2(1284, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjhjt"]
+size = Vector2(1280.5, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpmmp"]
 size = Vector2(28, 729)
@@ -14,6 +17,9 @@ size = Vector2(20, 722)
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_sinyy")
+ObjScore1 = 5
+ObjScore2 = 10
+ObjScore3 = 15
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1278.0
@@ -40,18 +46,26 @@ offset_right = 60.0
 offset_bottom = 30.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 300.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_4ifda")]
 position = Vector2(651, 650)
+PlayerJump = 400.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(639, 714)
 shape = SubResource("RectangleShape2D_bkcmk")
+
+[node name="Floor" type="Area2D" parent="Floor"]
+position = Vector2(639, 704)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/Floor"]
+shape = SubResource("RectangleShape2D_pjhjt")
+metadata/_edit_lock_ = true
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2(0, 325)
@@ -67,4 +81,30 @@ position = Vector2(1278, 325)
 position = Vector2(0, 37)
 shape = SubResource("RectangleShape2D_wm8gk")
 
+[node name="Spawners" type="Node" parent="."]
+
+[node name="Spawner1" type="Node2D" parent="Spawners"]
+position = Vector2(938, 175)
+
+[node name="Spawner2" type="Node2D" parent="Spawners"]
+position = Vector2(673, 127)
+
+[node name="Spawner3" type="Node2D" parent="Spawners"]
+position = Vector2(154, 148)
+
+[node name="SpawnTImer" type="Timer" parent="Spawners"]
+wait_time = 4.0
+autostart = true
+
+[node name="SpawnTImer2" type="Timer" parent="Spawners"]
+wait_time = 7.0
+autostart = true
+
+[node name="SpawnTImer3" type="Timer" parent="Spawners"]
+wait_time = 9.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawners/SpawnTImer" to="." method="_on_spawn_t_imer_timeout"]
+[connection signal="timeout" from="Spawners/SpawnTImer2" to="." method="_on_spawn_t_imer_2_timeout"]
+[connection signal="timeout" from="Spawners/SpawnTImer3" to="." method="_on_spawn_t_imer_3_timeout"]
