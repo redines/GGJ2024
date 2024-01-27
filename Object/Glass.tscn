@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://ctk146y0cjf6f" path="res://Assets/pixil-frame-0 (1).png" id="2_rxaac"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
-radius = 55.1453
+radius = 7.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 49.0102
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ew2qy"]
+radius = 25.0
+height = 86.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(153, 140)
+size = Vector2(76, 106)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -29,12 +30,12 @@ shape = SubResource("CircleShape2D_euaim")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_uvdap")
+shape = SubResource("CapsuleShape2D_ew2qy")
 
 [node name="Area2D3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(0.5, 3)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_5jjmt")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

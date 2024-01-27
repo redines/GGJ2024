@@ -10,7 +10,7 @@ radius = 55.1453
 radius = 49.0102
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(153, 140)
+size = Vector2(133, 129)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -38,9 +38,8 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(0.5, 3)
+position = Vector2(-1.5, -2.5)
 shape = SubResource("RectangleShape2D_5jjmt")
-metadata/_edit_lock_ = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
