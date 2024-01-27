@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1ydcgb57vbu7"]
+[gd_scene load_steps=3 format=3 uid="uid://c1ydcgb57vbu7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vp6ei"]
+[ext_resource type="AudioStream" uid="uid://byhs1el42dco6" path="res://Assets/Komiku_-_13_-_Good_Fellow(chosic.com).mp3" id="2_36cke"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vp6ei")
@@ -40,5 +41,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Start game
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_36cke")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/StartBtn" to="." method="_on_start_btn_pressed"]
