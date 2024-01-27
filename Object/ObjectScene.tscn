@@ -1,18 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtbvdgjsmkvge"]
+[gd_scene load_steps=7 format=3 uid="uid://dtbvdgjsmkvge"]
 
-[ext_resource type="Script" path="res://Object/Object.gd" id="1_7b7q6"]
-[ext_resource type="Texture2D" uid="uid://cxdd4i63avpxs" path="res://icon.svg" id="1_s50u1"]
+[ext_resource type="Script" path="res://Object/ObjectScene.gd" id="1_xacr3"]
 [ext_resource type="Script" path="res://Object/StaticBody2D.gd" id="2_6tf0n"]
+[ext_resource type="PackedScene" uid="uid://cnelfnaktc80a" path="res://object.tscn" id="2_m6f4m"]
 [ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="4_7gjnt"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
-radius = 55.1453
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 49.0102
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(153, 140)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhi2m"]
 size = Vector2(637, 20)
@@ -21,37 +12,9 @@ size = Vector2(637, 20)
 size = Vector2(735, 70)
 
 [node name="ObjectScene" type="Node2D"]
+script = ExtResource("1_xacr3")
 
-[node name="Object" type="RigidBody2D" parent="."]
-modulate = Color(1, 0.439216, 1, 1)
-position = Vector2(609, 83)
-mass = 0.2
-gravity_scale = 0.1
-script = ExtResource("1_7b7q6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Object"]
-position = Vector2(1, 0)
-scale = Vector2(0.71875, 0.742188)
-texture = ExtResource("1_s50u1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
-shape = SubResource("CircleShape2D_euaim")
-metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="Object"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Area2D"]
-shape = SubResource("CircleShape2D_uvdap")
-metadata/_edit_lock_ = true
-
-[node name="Area2D3" type="Area2D" parent="Object"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Area2D3"]
-position = Vector2(0.5, 3)
-shape = SubResource("RectangleShape2D_5jjmt")
-metadata/_edit_lock_ = true
+[node name="Object" parent="." instance=ExtResource("2_m6f4m")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(579, 618)
@@ -71,7 +34,28 @@ shape = SubResource("RectangleShape2D_s8je3")
 position = Vector2(418, 579)
 scale = Vector2(1.5, 1.5)
 
-[connection signal="body_shape_entered" from="Object" to="Object" method="_on_body_shape_entered"]
-[connection signal="area_entered" from="Object/Area2D" to="Object" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Object/Area2D3" to="Object" method="_on_area_2d_3_body_entered"]
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(831, 325)
+
+[node name="Spawn" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Spawner2" type="Node2D" parent="."]
+position = Vector2(338, 223)
+
+[node name="Spawn2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Spawner3" type="Node2D" parent="."]
+position = Vector2(637, 185)
+
+[node name="Spawn3" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
 [connection signal="body_entered" from="StaticBody2D/Floor" to="StaticBody2D" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Spawn" to="." method="_on_spawn_timeout"]
+[connection signal="timeout" from="Spawn2" to="." method="_on_spawn_2_timeout"]
+[connection signal="timeout" from="Spawn3" to="." method="_on_spawn_3_timeout"]
