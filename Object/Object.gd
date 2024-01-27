@@ -7,8 +7,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _on_area_2d_area_entered(area):
 	if area.name == "Floor":
@@ -17,6 +15,8 @@ func _on_area_2d_area_entered(area):
 
 func _on_area_2d_3_body_entered(body):
 	if body.name == "PlayerCat":
-		print("5 Points to Griffindor!!")
+		Global.PlayerScore+=5
+		print("Total Score:", Global.PlayerScore)
+		
 		queue_free()
 	pass # Replace with function body.
