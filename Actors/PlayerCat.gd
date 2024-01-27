@@ -4,6 +4,7 @@ const GRAVITY = 200.0
 
 ###Node initialization
 @onready var fsm := $StateMachine
+@onready var stuntimer = $Timer
 
 ###Player stats
 @export var PlayerSpeed := 200.0
@@ -13,11 +14,17 @@ const GRAVITY = 200.0
 var dashing = false
 var NO_SLOPE = 64.0
 var DashAmount = 1
+var stunned = false
 
 func _ready():
 	SignalBus.Stun_Player.connect(stun_Player)
 	
 
 func stun_Player():
+	stunned = true
+	stuntimer.start()
 	print("players gets stunned")
 
+func _on_timer_timeout():
+	stunned = false
+	print("player can move")

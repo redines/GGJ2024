@@ -38,3 +38,9 @@ script = ExtResource("6_ycc3s")
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("7_7o0k2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
