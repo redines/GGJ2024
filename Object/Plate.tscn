@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cpk0ck1wqqfqx" path="res://Assets/pixil-frame-0 (2).png" id="2_o68jp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
-radius = 55.1453
+radius = 31.257
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 49.0102
+radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(153, 140)
+size = Vector2(101, 87)
 
-[node name="Object" type="RigidBody2D"]
+[node name="Object2" type="RigidBody2D"]
 position = Vector2(609, 83)
 mass = 0.2
 gravity_scale = 0.1
@@ -20,8 +20,8 @@ script = ExtResource("1_7tubb")
 objectScore = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(0.71875, 0.742188)
+position = Vector2(-5.24521e-06, -1.90735e-06)
+scale = Vector2(0.964687, 0.910547)
 texture = ExtResource("2_o68jp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,7 +39,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(0.5, 3)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_5jjmt")
 metadata/_edit_lock_ = true
 
