@@ -4,8 +4,8 @@ extends Node2D
 @onready var FinalObjDestroyed = $CanvasLayer/ScoreBoard/ObjDestroyed
 
 func _ready():
-	FinalScoreLabel.text = str(Global.PlayerScore)
-	FinalObjDestroyed.text = str(Global.ObjectsDestroyed)
+	FinalScoreLabel.text = "Final score: " + str(Global.PlayerScore)
+	FinalObjDestroyed.text = "Objects destroyed: " + str(Global.ObjectsDestroyed)
 
 func _on_back_to_start_pressed():
 	Global.PlayerScore = 0

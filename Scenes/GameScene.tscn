@@ -1,37 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhnwsd4qryba4"]
+[gd_scene load_steps=6 format=3 uid="uid://dhnwsd4qryba4"]
 
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_sinyy"]
+[ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="2_4ifda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcmk"]
+size = Vector2(1284, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpmmp"]
+size = Vector2(28, 729)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm8gk"]
+size = Vector2(20, 722)
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_sinyy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1150.0
-offset_bottom = 643.0
+offset_right = 1278.0
+offset_bottom = 714.0
 color = Color(0.909804, 0.898039, 0.619608, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 offset_right = 415.0
-offset_bottom = 145.0
+offset_bottom = 76.0
 
 [node name="Time" type="Label" parent="CanvasLayer/Panel"]
-offset_left = 9.0
-offset_top = 41.0
-offset_right = 49.0
-offset_bottom = 64.0
-text = "Test"
+layout_mode = 0
+offset_left = 20.0
+offset_top = 38.0
+offset_right = 60.0
+offset_bottom = 61.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_right = 369.0
-offset_bottom = 71.0
-text = "This is level 1"
+offset_left = 20.0
+offset_right = 60.0
+offset_bottom = 30.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 300.0
 one_shot = true
 autostart = true
+
+[node name="PlayerCat" parent="." instance=ExtResource("2_4ifda")]
+position = Vector2(651, 650)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(639, 714)
+shape = SubResource("RectangleShape2D_bkcmk")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(0, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(0, 42)
+shape = SubResource("RectangleShape2D_wpmmp")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1278, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(0, 37)
+shape = SubResource("RectangleShape2D_wm8gk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

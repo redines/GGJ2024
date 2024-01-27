@@ -2,16 +2,18 @@
 extends PlayerState
 
 func enter(msg := {}) -> void:
-	if msg.has("do_attack"):
+	if msg.has("do_jump"):
 		player.velocity.y = -player.PlayerJump
 
-func physics_update(delta: float) -> void:
 
+func physics_update(delta: float) -> void:
+	# Horizontal movement.
 	var input_direction_x: float = (
 		Input.get_action_strength("move_right")
 		- Input.get_action_strength("move_left")
 	)
 	player.velocity.x = player.PlayerSpeed * input_direction_x
+	# Vertical movement.
 	player.velocity.y += player.GRAVITY * delta
 	player.move_and_slide()
 

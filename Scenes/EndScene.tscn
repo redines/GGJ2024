@@ -4,47 +4,68 @@
 
 [node name="EndScene" type="Node2D"]
 script = ExtResource("1_2c5ks")
+metadata/_edit_horizontal_guides_ = [-73.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1151.0
-offset_bottom = 650.0
+offset_right = 1283.0
+offset_bottom = 720.0
 color = Color(1, 0.360784, 1, 1)
-
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 379.0
-offset_top = 60.0
-offset_right = 637.0
-offset_bottom = 137.0
-text = "END GAME"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 485.0
+offset_top = 61.0
+offset_right = 743.0
+offset_bottom = 138.0
+text = "End Game! 
+Thanks for playing"
+horizontal_alignment = 1
+
 [node name="ScoreBoard" type="Panel" parent="CanvasLayer"]
-offset_left = 98.0
-offset_top = 65.0
-offset_right = 300.0
-offset_bottom = 214.0
+offset_left = 464.0
+offset_top = 156.0
+offset_right = 810.0
+offset_bottom = 305.0
 
 [node name="PlayerScore" type="Label" parent="CanvasLayer/ScoreBoard"]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 13.0
+offset_top = 14.0
 offset_right = 166.0
-offset_bottom = 54.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 25
 
 [node name="ObjDestroyed" type="Label" parent="CanvasLayer/ScoreBoard"]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 67.0
-offset_right = 173.0
-offset_bottom = 119.0
+offset_left = 21.0
+offset_top = 68.0
+offset_right = 165.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 25
+
+[node name="ScoreBoard2" type="Panel" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 481.0
+offset_right = 464.0
+offset_bottom = 630.0
+
+[node name="CreatedBy" type="Label" parent="CanvasLayer/ScoreBoard2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 14.0
+offset_right = 351.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 25
+text = "Made By:
+Progamming: Pontus & Elin
+Art: David"
 
 [node name="Back to start" type="Button" parent="."]
-offset_left = 350.0
-offset_top = 153.0
-offset_right = 505.0
-offset_bottom = 184.0
+offset_left = 558.0
+offset_top = 335.0
+offset_right = 713.0
+offset_bottom = 366.0
 text = "Back to start Menu
 "
 
