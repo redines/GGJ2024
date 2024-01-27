@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhnwsd4qryba4"]
+[gd_scene load_steps=8 format=3 uid="uid://dhnwsd4qryba4"]
 
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_sinyy"]
 [ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="2_4ifda"]
+[ext_resource type="Texture2D" uid="uid://rxd87dnpx6e5" path="res://Assets/bgcolor.png" id="2_emwj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcmk"]
 size = Vector2(1284, 36)
@@ -22,6 +23,11 @@ script = ExtResource("1_sinyy")
 offset_right = 1278.0
 offset_bottom = 714.0
 color = Color(0.909804, 0.898039, 0.619608, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1275.0
+offset_bottom = 714.0
+texture = ExtResource("2_emwj0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -81,13 +87,16 @@ shape = SubResource("RectangleShape2D_wm8gk")
 [node name="Spawners" type="Node" parent="."]
 
 [node name="Spawner1" type="Node2D" parent="Spawners"]
-position = Vector2(938, 175)
+position = Vector2(1009, 117)
 
 [node name="Spawner2" type="Node2D" parent="Spawners"]
-position = Vector2(673, 127)
+position = Vector2(640, 222)
 
 [node name="Spawner3" type="Node2D" parent="Spawners"]
-position = Vector2(154, 148)
+position = Vector2(363, 124)
+
+[node name="Spawner4" type="Node2D" parent="Spawners"]
+position = Vector2(197, 340)
 
 [node name="SpawnTImer" type="Timer" parent="Spawners"]
 wait_time = 4.0
@@ -101,7 +110,12 @@ autostart = true
 wait_time = 9.0
 autostart = true
 
+[node name="SpawnTImer4" type="Timer" parent="Spawners"]
+wait_time = 4.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawners/SpawnTImer" to="." method="_on_spawn_t_imer_timeout"]
 [connection signal="timeout" from="Spawners/SpawnTImer2" to="." method="_on_spawn_t_imer_2_timeout"]
 [connection signal="timeout" from="Spawners/SpawnTImer3" to="." method="_on_spawn_t_imer_3_timeout"]
+[connection signal="timeout" from="Spawners/SpawnTImer4" to="." method="_on_spawn_t_imer_4_timeout"]

@@ -6,10 +6,12 @@ extends Node2D
 @onready var sp = $Spawners/Spawner1
 @onready var spTwo = $Spawners/Spawner2
 @onready var spThree = $Spawners/Spawner3
+@onready var spFour = $Spawners/Spawner4
 
 var randomOne = RandomNumberGenerator.new()
 var randomTwo = RandomNumberGenerator.new()
 var randomThree = RandomNumberGenerator.new()
+var randomFour = RandomNumberGenerator.new()
 
 var t = [
 	preload("res://Object/Glass.tscn"),
@@ -21,6 +23,7 @@ func _ready():
 	randomOne.randomize()
 	randomTwo.randomize()
 	randomThree.randomize()
+	randomFour.randomize()
 
 func _process(_delta):
 	ScoreLabel.text = "Score: " + str(Global.PlayerScore)
@@ -49,3 +52,11 @@ func _on_spawn_t_imer_3_timeout():
 	Vas.position = spThree.position
 	$Spawners/SpawnTImer3.set_wait_time(randomThree.randf_range(4, 12))
 	$Spawners/SpawnTImer3.start()
+
+
+func _on_spawn_t_imer_4_timeout():
+	var Vas = t[randomFour.randi_range(0, 2)].instantiate()
+	add_child(Vas)
+	Vas.position = spFour.position
+	$Spawners/SpawnTImer4.set_wait_time(randomFour.randf_range(4, 12))
+	$Spawners/SpawnTImer4.start()
