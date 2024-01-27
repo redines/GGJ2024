@@ -16,13 +16,6 @@ color = Color(0.909804, 0.898039, 0.619608, 1)
 offset_right = 415.0
 offset_bottom = 145.0
 
-[node name="Time" type="Label" parent="CanvasLayer/Panel"]
-offset_left = 9.0
-offset_top = 41.0
-offset_right = 49.0
-offset_bottom = 64.0
-text = "Test"
-
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_right = 369.0
@@ -30,8 +23,11 @@ offset_bottom = 71.0
 text = "This is level 1"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
+wait_time = 60.0
 autostart = true
+
+[node name="Time" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

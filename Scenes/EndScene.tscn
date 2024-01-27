@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://8xkc2ird6jcx"]
+[gd_scene load_steps=2 format=3 uid="uid://8xkc2ird6jcx"]
+
+[ext_resource type="Script" path="res://Scenes/EndScene.gd" id="1_2c5ks"]
 
 [node name="EndScene" type="Node2D"]
+script = ExtResource("1_2c5ks")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+color = Color(1, 0.360784, 1, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 60.0
+offset_right = 637.0
+offset_bottom = 137.0
+text = "END GAME"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreBoard" type="Panel" parent="CanvasLayer"]
+offset_left = 98.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 214.0
+
+[node name="PlayerScore" type="Label" parent="CanvasLayer/ScoreBoard"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 13.0
+offset_right = 166.0
+offset_bottom = 54.0
+
+[node name="ObjDestroyed" type="Label" parent="CanvasLayer/ScoreBoard"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 67.0
+offset_right = 173.0
+offset_bottom = 119.0
+
+[node name="Back to start" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 153.0
+offset_right = 505.0
+offset_bottom = 184.0
+text = "Back to start Menu
+"
+
+[connection signal="pressed" from="Back to start" to="." method="_on_back_to_start_pressed"]
