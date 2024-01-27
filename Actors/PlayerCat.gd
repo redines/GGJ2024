@@ -5,6 +5,8 @@ const GRAVITY = 200.0
 ###Node initialization
 @onready var fsm := $StateMachine
 @onready var stuntimer = $Timer
+@onready var anim = $Sprite2D/AnimationPlayer
+@onready var jumpSound = $JumpSound
 
 ###Player stats
 @export var PlayerSpeed := 200.0
@@ -18,12 +20,11 @@ var stunned = false
 
 func _ready():
 	SignalBus.Stun_Player.connect(stun_Player)
-	
 
 func stun_Player():
 	stunned = true
 	stuntimer.start()
-	print("players gets stunned")
+	anim.play("Stun_Animation")
 
 func _on_timer_timeout():
 	stunned = false
