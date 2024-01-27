@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dg6ksiu5ea4tk"]
 
 [ext_resource type="Script" path="res://Object/Object.gd" id="1_yw711"]
-[ext_resource type="Texture2D" uid="uid://cxdd4i63avpxs" path="res://icon.svg" id="2_uqvtd"]
+[ext_resource type="Texture2D" uid="uid://b8e25ahlcbhdp" path="res://Assets/pixil-frame-0.png" id="2_bpek1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
 radius = 55.1453
@@ -13,16 +13,15 @@ radius = 49.0102
 size = Vector2(153, 140)
 
 [node name="Object" type="RigidBody2D"]
-modulate = Color(1, 0.439216, 1, 1)
 position = Vector2(609, 83)
 mass = 0.2
 gravity_scale = 0.1
 script = ExtResource("1_yw711")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(0.71875, 0.742188)
-texture = ExtResource("2_uqvtd")
+position = Vector2(-1.12057e-05, 2.38419e-06)
+scale = Vector2(1.02469, 1.09555)
+texture = ExtResource("2_bpek1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_euaim")
