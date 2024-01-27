@@ -3,7 +3,6 @@ extends PlayerState
 
 func enter(msg := {}) -> void:
 	if msg.has("do_jump"):
-		player.anim.play("Jump_Animation")
 		player.velocity.y = -player.PlayerJump
 
 
@@ -12,7 +11,12 @@ func physics_update(delta: float) -> void:
 		# Vertical movement.
 		player.velocity.y += player.GRAVITY * delta
 		player.move_and_slide()
-		player.anim.play("Fall_Animation")
+
+		if player.velocity.y > 0:
+			player.anim.play("Fall_Animation")
+		
+		if not player.is_on_floor() && Input.is_action_pressed("attack"):
+			state_machine.transition_to("Attack", {do_attack = true})
 		
 		# Landing.
 		if player.is_on_floor():
