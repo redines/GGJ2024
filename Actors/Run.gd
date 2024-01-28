@@ -22,7 +22,7 @@ func physics_update(delta: float) -> void:
 			state_machine.transition_to("Air", {do_jump = true})
 			player.jumpSound.play()
 			player.anim.play("Jump_Animation")
-		elif Input.is_action_pressed("attack"):
+		elif Input.is_action_just_pressed("attack"):
 			state_machine.transition_to("Attack", {do_attack = true})
 		elif is_equal_approx(input_direction_x, 0.0):
 			state_machine.transition_to("Idle")

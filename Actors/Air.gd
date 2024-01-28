@@ -15,7 +15,7 @@ func physics_update(delta: float) -> void:
 		if player.velocity.y > 0:
 			player.anim.play("Fall_Animation")
 		
-		if not player.is_on_floor() && Input.is_action_pressed("attack"):
+		if not player.is_on_floor() && Input.is_action_just_pressed("attack"):
 			state_machine.transition_to("Attack", {do_attack = true})
 		
 		# Landing.
