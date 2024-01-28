@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://chmk2fj1keal1"]
+[gd_scene load_steps=10 format=3 uid="uid://chmk2fj1keal1"]
 
 [ext_resource type="Script" path="res://Object/Object.gd" id="1_yw711"]
+[ext_resource type="Texture2D" uid="uid://bcppcw314u1ia" path="res://Assets/Obj_Vase_Break-Sheet.png" id="2_6x7am"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3pojv"]
 load_path = "res://.godot/imported/Sprite Sheet.png-650d6c3c22114ea1314ae09324b269db.ctex"
@@ -138,14 +139,14 @@ _data = {
 "Vase_Idle": SubResource("Animation_wh5qh")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
-radius = 28.0713
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04mwg"]
+size = Vector2(31, 13.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 35.0571
+radius = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(84, 79)
+size = Vector2(52, 52.5)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -159,7 +160,7 @@ animationtoplay = "Vase_Break"
 texture_filter = 1
 position = Vector2(-7, -8)
 scale = Vector2(0.71875, 0.742188)
-texture = SubResource("CompressedTexture2D_3pojv")
+texture = ExtResource("2_6x7am")
 hframes = 8
 vframes = 8
 frame = 62
@@ -182,23 +183,20 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_euaim")
-metadata/_edit_lock_ = true
+position = Vector2(0, 27.25)
+shape = SubResource("RectangleShape2D_04mwg")
 
 [node name="Area2D" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 7)
 shape = SubResource("CircleShape2D_uvdap")
-metadata/_edit_lock_ = true
 
 [node name="Area2D3" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(1, 0.5)
+position = Vector2(0, -5.75)
 shape = SubResource("RectangleShape2D_5jjmt")
-metadata/_edit_lock_ = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
