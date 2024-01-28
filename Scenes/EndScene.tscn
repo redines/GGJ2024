@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq048cge5xqit"]
+[gd_scene load_steps=3 format=3 uid="uid://dq048cge5xqit"]
 
 [ext_resource type="Script" path="res://Scenes/EndScene.gd" id="1_2c5ks"]
+[ext_resource type="Texture2D" uid="uid://bvwb6yyql8qy7" path="res://Assets/End screen.png" id="2_folu2"]
 
 [node name="EndScene" type="Node2D"]
 script = ExtResource("1_2c5ks")
@@ -10,6 +11,11 @@ metadata/_edit_horizontal_guides_ = [-73.0]
 offset_right = 1283.0
 offset_bottom = 720.0
 color = Color(0.596078, 0.65098, 0.976471, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1287.0
+offset_bottom = 721.0
+texture = ExtResource("2_folu2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
