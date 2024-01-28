@@ -139,11 +139,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
 radius = 31.257
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 40.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxkdm"]
+size = Vector2(52, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(101, 87)
+size = Vector2(77, 60)
 
 [node name="Object2" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -181,22 +181,18 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_euaim")
-metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_uvdap")
-metadata/_edit_lock_ = true
+position = Vector2(2, 32.5)
+shape = SubResource("RectangleShape2D_jxkdm")
 
 [node name="Area2D3" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(0.5, -0.5)
+position = Vector2(0.5, -5)
 shape = SubResource("RectangleShape2D_5jjmt")
-metadata/_edit_lock_ = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

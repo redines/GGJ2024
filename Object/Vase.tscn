@@ -139,13 +139,13 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euaim"]
-radius = 28.0713
+radius = 25.02
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uvdap"]
-radius = 35.0571
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v06bn"]
+size = Vector2(32.75, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(84, 79)
+size = Vector2(52, 50)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -162,6 +162,7 @@ scale = Vector2(0.71875, 0.742188)
 texture = SubResource("CompressedTexture2D_3pojv")
 hframes = 8
 vframes = 8
+frame = 62
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -181,23 +182,22 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_euaim")
-metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
+position = Vector2(5, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_uvdap")
-metadata/_edit_lock_ = true
+position = Vector2(-6, 29)
+shape = SubResource("RectangleShape2D_v06bn")
 
 [node name="Area2D3" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
+position = Vector2(5, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(1, 0.5)
+position = Vector2(-7, -2)
 shape = SubResource("RectangleShape2D_5jjmt")
-metadata/_edit_lock_ = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

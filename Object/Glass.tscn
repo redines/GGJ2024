@@ -158,7 +158,7 @@ size = Vector2(16, 38)
 size = Vector2(20, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(35, 37)
+size = Vector2(24, 37)
 
 [node name="Glass" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -195,22 +195,22 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(6, -9)
 shape = SubResource("RectangleShape2D_icjq5")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
+position = Vector2(4, -7)
 shape = SubResource("RectangleShape2D_om10k")
 
 [node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(1.5, -1.5)
+position = Vector2(5, -8)
 shape = SubResource("RectangleShape2D_5jjmt")
-metadata/_edit_lock_ = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
