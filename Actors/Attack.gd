@@ -15,7 +15,7 @@ func physics_update(_delta) -> void:
 			- Input.get_action_strength("move_left")
 		)
 			
-		player.velocity.x = player.dashSpeed * input_direction_x
+		player.velocity.x = player.PlayerAttack * input_direction_x
 		player.set_velocity(player.velocity)
 		player.set_up_direction(Vector2.UP)
 		player.move_and_slide()

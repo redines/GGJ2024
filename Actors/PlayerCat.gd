@@ -15,7 +15,7 @@ const GRAVITY = 200.0
 @export var PlayerSpeed := 200.0
 @export var PlayerJump := 200.0
 @export var MaxHealth := 3
-
+@export var PlayerAttack := 200
 var stunned = false
 
 func _ready():
