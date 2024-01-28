@@ -1,6 +1,6 @@
 class_name Player
 extends CharacterBody2D
-const GRAVITY = 200.0
+@export var GRAVITY = 200.0
 
 ###Node initialization
 @onready var fsm := $StateMachine

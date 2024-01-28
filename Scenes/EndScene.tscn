@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq048cge5xqit"]
+[gd_scene load_steps=5 format=3 uid="uid://dq048cge5xqit"]
 
 [ext_resource type="Script" path="res://Scenes/EndScene.gd" id="1_2c5ks"]
 [ext_resource type="Texture2D" uid="uid://ceq7gqybm218t" path="res://Assets/End Screen Shadow.png" id="2_frpha"]
+[ext_resource type="FontFile" path="res://Assets/PIXEL CRAFT.ttf" id="3_l08g2"]
+[ext_resource type="Texture2D" uid="uid://ddbk4kjn4crsy" path="res://Assets/Selectbutton.png" id="4_s2piw"]
 
 [node name="EndScene" type="Node2D"]
 script = ExtResource("1_2c5ks")
@@ -24,6 +26,8 @@ offset_left = 485.0
 offset_top = 61.0
 offset_right = 743.0
 offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("3_l08g2")
+theme_override_font_sizes/font_size = 23
 text = "End Game! 
 Thanks for playing"
 horizontal_alignment = 1
@@ -40,6 +44,7 @@ offset_left = 21.0
 offset_top = 14.0
 offset_right = 166.0
 offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("3_l08g2")
 theme_override_font_sizes/font_size = 25
 
 [node name="ObjDestroyed" type="Label" parent="CanvasLayer/ScoreBoard"]
@@ -48,6 +53,7 @@ offset_left = 21.0
 offset_top = 68.0
 offset_right = 165.0
 offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("3_l08g2")
 theme_override_font_sizes/font_size = 25
 
 [node name="ScoreBoard2" type="Panel" parent="CanvasLayer"]
@@ -58,21 +64,33 @@ offset_bottom = 630.0
 
 [node name="CreatedBy" type="Label" parent="CanvasLayer/ScoreBoard2"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 14.0
-offset_right = 351.0
-offset_bottom = 137.0
+offset_left = 10.0
+offset_top = -5.0
+offset_right = 349.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("3_l08g2")
 theme_override_font_sizes/font_size = 25
 text = "Made By:
 Progamming: Pontus & Elin
-Art: David"
+Art: David, Elin & Vanessa"
 
-[node name="Back to start" type="Button" parent="."]
-offset_left = 558.0
+[node name="StartBtn" type="TextureButton" parent="."]
+offset_left = 416.0
+offset_top = 237.0
+offset_right = 644.0
+offset_bottom = 365.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_s2piw")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = 535.0
 offset_top = 335.0
-offset_right = 713.0
-offset_bottom = 366.0
-text = "Back to start Menu
-"
+offset_right = 754.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("3_l08g2")
+theme_override_font_sizes/font_size = 31
+text = "Back to start"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="Back to start" to="." method="_on_back_to_start_pressed"]
+[connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]

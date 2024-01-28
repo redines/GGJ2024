@@ -44,14 +44,14 @@ func _on_spawn_t_imer_2_timeout():
 	var Vas = t[randomTwo.randi_range(0, 2)].instantiate()
 	add_child(Vas)
 	Vas.position = spTwo.position
-	$Spawners/SpawnTImer2.set_wait_time(randomTwo.randf_range(4, 12))
+	$Spawners/SpawnTImer2.set_wait_time(randomTwo.randf_range(1, 8))
 	$Spawners/SpawnTImer2.start()
 
 func _on_spawn_t_imer_3_timeout():
 	var Vas = t[randomThree.randi_range(0, 2)].instantiate()
 	add_child(Vas)
 	Vas.position = spThree.position
-	$Spawners/SpawnTImer3.set_wait_time(randomThree.randf_range(4, 12))
+	$Spawners/SpawnTImer3.set_wait_time(randomThree.randf_range(1, 8))
 	$Spawners/SpawnTImer3.start()
 
 
@@ -59,5 +59,5 @@ func _on_spawn_t_imer_4_timeout():
 	var Vas = t[randomFour.randi_range(0, 2)].instantiate()
 	add_child(Vas)
 	Vas.position = spFour.position
-	$Spawners/SpawnTImer4.set_wait_time(randomFour.randf_range(4, 12))
+	$Spawners/SpawnTImer4.set_wait_time(randomFour.randf_range(1, 8))
 	$Spawners/SpawnTImer4.start()

@@ -142,10 +142,10 @@ _data = {
 radius = 25.02
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v06bn"]
-size = Vector2(32.75, 10.5)
+size = Vector2(18, 3.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jjmt"]
-size = Vector2(52, 50)
+size = Vector2(52, 56)
 
 [node name="Object" type="RigidBody2D"]
 position = Vector2(609, 83)
@@ -189,17 +189,18 @@ shape = SubResource("CircleShape2D_euaim")
 position = Vector2(5, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-6, 29)
+position = Vector2(-5, 32.25)
 shape = SubResource("RectangleShape2D_v06bn")
 
 [node name="Area2D3" type="Area2D" parent="."]
 position = Vector2(5, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(-7, -2)
+position = Vector2(-7, 1)
 shape = SubResource("RectangleShape2D_5jjmt")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]

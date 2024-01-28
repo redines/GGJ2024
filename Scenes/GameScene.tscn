@@ -56,6 +56,7 @@ autostart = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_4ifda")]
 position = Vector2(647, 625)
+GRAVITY = 200.0
 PlayerJump = 400.0
 
 [node name="Floor" type="StaticBody2D" parent="."]

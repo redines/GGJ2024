@@ -406,12 +406,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3eil"]
-size = Vector2(96, 74)
+size = Vector2(55, 85.5)
 
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_e5wkh")
-PlayerSpeed = 400.0
-PlayerJump = 800.0
+GRAVITY = 600.0
+PlayerSpeed = 500.0
+PlayerJump = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -440,7 +441,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(39, 34)
+position = Vector2(59, 46.25)
 shape = SubResource("RectangleShape2D_w3eil")
 
 [node name="StateMachine" type="Node" parent="."]
