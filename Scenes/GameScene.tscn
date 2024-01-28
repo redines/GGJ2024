@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhnwsd4qryba4"]
+[gd_scene load_steps=11 format=3 uid="uid://dhnwsd4qryba4"]
 
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_sinyy"]
 [ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="2_4ifda"]
-[ext_resource type="Texture2D" uid="uid://rxd87dnpx6e5" path="res://Assets/bgcolor.png" id="2_emwj0"]
+[ext_resource type="Texture2D" uid="uid://bydqyysdvaxjk" path="res://Assets/BG.png" id="2_v14gc"]
+[ext_resource type="Texture2D" uid="uid://ddbk4kjn4crsy" path="res://Assets/Selectbutton.png" id="3_oki73"]
 [ext_resource type="AudioStream" uid="uid://xuxa2nqkwp3v" path="res://Assets/Komiku_-_07_-_Battle_of_Pogs(chosic.com).mp3" id="4_1cv4k"]
+[ext_resource type="FontFile" uid="uid://b224l2u4ojfch" path="res://Assets/PIXEL CRAFT.ttf" id="4_kcsrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcmk"]
 size = Vector2(1284, 36)
@@ -28,26 +30,33 @@ color = Color(0.909804, 0.898039, 0.619608, 1)
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1275.0
 offset_bottom = 714.0
-texture = ExtResource("2_emwj0")
+texture = ExtResource("2_v14gc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 282.0
-offset_bottom = 76.0
+[node name="Panel" type="TextureRect" parent="CanvasLayer"]
+offset_left = 424.0
+offset_top = -123.0
+offset_right = 697.0
+offset_bottom = 74.0
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("3_oki73")
 
 [node name="Time" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 38.0
-offset_right = 60.0
-offset_bottom = 61.0
+offset_left = 81.3954
+offset_top = 93.6047
+offset_right = 121.395
+offset_bottom = 124.605
+theme_override_fonts/font = ExtResource("4_kcsrn")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 20.0
-offset_right = 60.0
-offset_bottom = 30.0
+offset_left = 81.3954
+offset_top = 72.6744
+offset_right = 121.395
+offset_bottom = 103.674
+theme_override_fonts/font = ExtResource("4_kcsrn")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
@@ -56,8 +65,6 @@ autostart = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_4ifda")]
 position = Vector2(647, 625)
-GRAVITY = 200.0
-PlayerJump = 400.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 

@@ -1,6 +1,6 @@
 class_name Player
 extends CharacterBody2D
-@export var GRAVITY = 200.0
+@export var GRAVITY := 1200.0
 
 ###Node initialization
 @onready var fsm := $StateMachine
@@ -12,8 +12,8 @@ extends CharacterBody2D
 @onready var attacksound = $attack
 
 ###Player stats
-@export var PlayerSpeed := 200.0
-@export var PlayerJump := 200.0
+@export var PlayerSpeed := 400.0
+@export var PlayerJump := 800.0
 @export var MaxHealth := 3
 @export var PlayerAttack := 200
 var stunned = false

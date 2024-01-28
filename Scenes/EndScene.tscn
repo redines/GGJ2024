@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/EndScene.gd" id="1_2c5ks"]
 [ext_resource type="Texture2D" uid="uid://ceq7gqybm218t" path="res://Assets/End Screen Shadow.png" id="2_frpha"]
-[ext_resource type="FontFile" path="res://Assets/PIXEL CRAFT.ttf" id="3_l08g2"]
+[ext_resource type="FontFile" uid="uid://b224l2u4ojfch" path="res://Assets/PIXEL CRAFT.ttf" id="3_l08g2"]
 [ext_resource type="Texture2D" uid="uid://ddbk4kjn4crsy" path="res://Assets/Selectbutton.png" id="4_s2piw"]
 
 [node name="EndScene" type="Node2D"]

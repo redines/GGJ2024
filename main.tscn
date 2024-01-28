@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://p60tbte3dead" path="res://Assets/pixil-frame-0 (3).png" id="3_6j164"]
 [ext_resource type="Texture2D" uid="uid://ddbk4kjn4crsy" path="res://Assets/Selectbutton.png" id="3_64cvf"]
 [ext_resource type="Texture2D" uid="uid://bjbe5mr1eoaou" path="res://Assets/pixil-frame-0 (4).png" id="4_3w2of"]
-[ext_resource type="FontFile" path="res://Assets/PIXEL CRAFT.ttf" id="4_fo6ip"]
+[ext_resource type="FontFile" uid="uid://b224l2u4ojfch" path="res://Assets/PIXEL CRAFT.ttf" id="4_fo6ip"]
 [ext_resource type="Texture2D" uid="uid://clfg02u38w8bb" path="res://Assets/Keyboard_Desc.png" id="4_tbhe8"]
 [ext_resource type="Texture2D" uid="uid://gibdwcgoekkt" path="res://Assets/Title Text.png" id="4_vadxr"]
 [ext_resource type="Texture2D" uid="uid://118vvwp8d38m" path="res://Assets/pixil-frame-0 (5).png" id="5_55byg"]

@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.94902, 0.466667, 0.447059, 1)
 boot_splash/image="res://Assets/Tofusagi_Logo_-_Finished_Touch.png"
 config/icon="res://Assets/Launcher pic.png"
-boot_splash/minimum_display_time=3000
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
