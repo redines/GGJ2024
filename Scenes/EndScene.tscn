@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dq048cge5xqit"]
 
 [ext_resource type="Script" path="res://Scenes/EndScene.gd" id="1_2c5ks"]
-[ext_resource type="Texture2D" uid="uid://bvwb6yyql8qy7" path="res://Assets/End screen.png" id="2_folu2"]
+[ext_resource type="Texture2D" uid="uid://ceq7gqybm218t" path="res://Assets/End Screen Shadow.png" id="2_frpha"]
 
 [node name="EndScene" type="Node2D"]
 script = ExtResource("1_2c5ks")
@@ -15,7 +15,7 @@ color = Color(0.596078, 0.65098, 0.976471, 1)
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1287.0
 offset_bottom = 721.0
-texture = ExtResource("2_folu2")
+texture = ExtResource("2_frpha")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvwb6yyql8qy7"
-path="res://.godot/imported/End screen.png-9f83ea31b5f424d93c82787d9c27e6c7.ctex"
+uid="uid://ceq7gqybm218t"
+path="res://.godot/imported/End Screen Shadow.png-089e4179fe4a79af11454d932780f8bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/End screen.png"
-dest_files=["res://.godot/imported/End screen.png-9f83ea31b5f424d93c82787d9c27e6c7.ctex"]
+source_file="res://Assets/End Screen Shadow.png"
+dest_files=["res://.godot/imported/End Screen Shadow.png-089e4179fe4a79af11454d932780f8bd.ctex"]
 
 [params]
 
