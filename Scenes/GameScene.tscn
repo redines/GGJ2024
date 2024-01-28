@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhnwsd4qryba4"]
+[gd_scene load_steps=9 format=3 uid="uid://dhnwsd4qryba4"]
 
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_sinyy"]
 [ext_resource type="PackedScene" uid="uid://crr3b5cv7o0pp" path="res://Actors/PlayerCat.tscn" id="2_4ifda"]
 [ext_resource type="Texture2D" uid="uid://rxd87dnpx6e5" path="res://Assets/bgcolor.png" id="2_emwj0"]
+[ext_resource type="AudioStream" uid="uid://xuxa2nqkwp3v" path="res://Assets/Komiku_-_07_-_Battle_of_Pogs(chosic.com).mp3" id="4_1cv4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkcmk"]
 size = Vector2(1284, 36)
@@ -32,7 +33,7 @@ texture = ExtResource("2_emwj0")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 415.0
+offset_right = 282.0
 offset_bottom = 76.0
 
 [node name="Time" type="Label" parent="CanvasLayer/Panel"]
@@ -54,7 +55,7 @@ one_shot = true
 autostart = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("2_4ifda")]
-position = Vector2(651, 650)
+position = Vector2(647, 625)
 PlayerJump = 400.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -87,16 +88,16 @@ shape = SubResource("RectangleShape2D_wm8gk")
 [node name="Spawners" type="Node" parent="."]
 
 [node name="Spawner1" type="Node2D" parent="Spawners"]
-position = Vector2(1009, 117)
+position = Vector2(1012, 112)
 
 [node name="Spawner2" type="Node2D" parent="Spawners"]
-position = Vector2(640, 222)
+position = Vector2(641, 223)
 
 [node name="Spawner3" type="Node2D" parent="Spawners"]
-position = Vector2(363, 124)
+position = Vector2(368, 121)
 
 [node name="Spawner4" type="Node2D" parent="Spawners"]
-position = Vector2(197, 340)
+position = Vector2(192, 336)
 
 [node name="SpawnTImer" type="Timer" parent="Spawners"]
 wait_time = 4.0
@@ -113,6 +114,9 @@ autostart = true
 [node name="SpawnTImer4" type="Timer" parent="Spawners"]
 wait_time = 4.0
 autostart = true
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1cv4k")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawners/SpawnTImer" to="." method="_on_spawn_t_imer_timeout"]

@@ -24,6 +24,7 @@ func _ready():
 	randomTwo.randomize()
 	randomThree.randomize()
 	randomFour.randomize()
+	$music.play()
 
 func _process(_delta):
 	ScoreLabel.text = "Score: " + str(Global.PlayerScore)
